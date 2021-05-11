@@ -71,4 +71,18 @@ public class JobDetails {
     public void setSkills(String skills) {
         this.skills = skills;
     }
+
+    @Override
+    public String toString() {
+        return "JobDetails{" +
+                "title='" + title + '\'' +
+                ", company='" + company + '\'' +
+                ", location='" + location + '\'' +
+                ", type='" + type + '\'' +
+                ", level='" + level + '\'' +
+                ", yearsExp='" + yearsExp + '\'' +
+                ", country='" + country + '\'' +
+                ", skills='" + skills + '\'' +
+                '}';
+    }
 }
