@@ -6,14 +6,11 @@ public class ReadJobDetailsDataSet {
     private static final int NUMBER_OF_COLUMNS = 8;
     private List<JobDetails> jobDetailsList;
     private String path;
-    public ReadJobDetailsDataSet(String path){
-        setPath(path);
+    public ReadJobDetailsDataSet(){
         jobDetailsList = new ArrayList<JobDetails>();
     }
-    public List<JobDetails> getJobDetailsList() {
-        return jobDetailsList;
-    }
-    public List<JobDetails> read() {
+    public List<JobDetails> ReadCSVFile(String FileName) {
+        path = FileName;
         try (BufferedReader br = new BufferedReader(new FileReader(getPath()))) {
             // read the first line from the text file which will be head column
             String line = br.readLine();
@@ -60,6 +57,9 @@ public class ReadJobDetailsDataSet {
             result[7] += arr[i];
         }
         return result;
+    }
+    public List<JobDetails> getJobDetailsList() {
+        return jobDetailsList;
     }
     private String getPath() {
         return this.path;
